@@ -1,0 +1,27 @@
+{% extends 'base/principal.html' %}
+
+{% block content %}
+  <div class="barra-superior">
+    <h1>Registrarse</h1>
+  </div>
+
+  <div class="cuerpo-tarjeta">
+    <form method="POST">
+      {% csrf_token %}
+      <label>{{ form.username.label }}</label>
+      {{ form.username }}
+
+      <label>{{ form.username.password1 }}</label>
+      {{ form.password1 }}
+
+      <label>{{ form.username.password2 }}</label>
+      {{ form.password2 }}
+
+      <input class="boton" value="Confirmar" type="submit" />
+    </form>
+  </div>
+
+  <p>
+    Ya tienes una cuenta? <a href="{% url 'login' %}">Iniciar sesión</a>
+  </p>
+{% endblock %}
